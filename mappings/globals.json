@@ -4,6 +4,13 @@
     "DEG2RAD": 0.0174532925199,
     "UNIT_SF": 1000,
     "PLUGIN_CONFIG": {
+        "JETCPF_Reader": {
+            "ARGS": {
+                "shot": "{{ pulse }}",
+                "datatype": "{{ datatype }}",
+                "rank": "{{ rank }}"
+            }
+        },
         "MDSPLUS": {
             "ARGS": {
                 "shot": "{{ pulse }}",
