@@ -2,6 +2,9 @@
     "Comment": "Add any variables in here that are needed by your mappings",
     "Templating": "These can be used for substitution in the signal names",
     "Hello": "World",
+    "FLUX_LOOPS": [
+        "FL1", "FL2", "ETC"
+    ],
     "FL_POSITION_R": [
         2.6080, 0., 2.6080, 0., 1.8240, 0., 1.7730, 0., 2.3650, 0., 2.9930, 0., 4.4990, 4.4120, 4.4020, 3.9310,
         3.9090, 3.4450, 3.4200, 2.6380, 2.5890, 1.8410, 1.8150, 1.5700, 1.5640, 1.5420, 1.5490, 1.5640, 1.5700,
