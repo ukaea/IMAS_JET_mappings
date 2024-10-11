@@ -1,0 +1,25 @@
+{
+    "ids_properties/homogeneous_time": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 0
+    },
+    "ids_properties/comment": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "JET data mapped using UDA and JSON Mapping Plugin"
+    },
+    "ids_properties/provider": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Gabor Szepesi",
+        "COMMENT": "Automatic from PPF metadata"
+    },
+    "ids_properties/creation_date": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "TO BE ADDED",
+        "COMMENT": "Automatic from PPF metadata"
+    },
+    "ids_properties/node": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1,
+        "COMMENT": "Provenance for the whole IDS"
+    }
+}
