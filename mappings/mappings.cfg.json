@@ -1,4 +1,4 @@
 {
-    "3.37": ["summary"],
+    "3.37": ["summary", "magnetics", "thomson_scattering", "wall"],
     "3.34": ["pf_active"]
 }
