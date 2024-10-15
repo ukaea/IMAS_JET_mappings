@@ -2,6 +2,7 @@
     "Comment": "Add any variables in here that are needed by your mappings",
     "Templating": "These can be used for substitution in the signal names",
     "Hello": "World",
+    ACHTUNG: Strictly speaking we MUST NOT hardcode the number of channels since it varied throughout JET history !!! But there is no PPF signal to store the channel number !!!
     "CH_NAMES": [
         "CH1",
         "CH2",
