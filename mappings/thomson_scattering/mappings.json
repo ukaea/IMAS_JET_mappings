@@ -1,7 +1,7 @@
 {
     "ids_properties/homogeneous_time": {
         "MAP_TYPE": "VALUE",
-        "VALUE": 0
+        "VALUE": 1
     },
     "ids_properties/comment": {
         "MAP_TYPE": "VALUE",
@@ -30,6 +30,38 @@
         },
         "COMMENT": "The final syntax of this string may change"
     },
+    "_z": {
+       "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/Z\",{{ SHOT }}); _sig = value_of(_aux)"
+        },
+        "COMMENT": "The final syntax of this string may change"
+    },
+    "_t_e": {
+       "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/TE\",{{ SHOT }}); _sig = value_of(_aux)"
+        },
+        "COMMENT": "The final syntax of this string may change"
+    },
+    "_n_e": {
+       "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/NE\",{{ SHOT }}); _sig = value_of(_aux)"
+        },
+        "COMMENT": "The final syntax of this string may change"
+    },
+    "time": {
+       "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/NE\",{{ SHOT }}); _sig = dim_of(_aux,1)"
+        },
+        "COMMENT": "The final syntax of this string may change"
+    },
     "channel": {
         "MAP_TYPE": "DIMENSION",
         "DIM_PROBE": "_r"
@@ -40,55 +72,49 @@
         "COMMENT": "The array defined in globals is oversized since i have no clue what is the total number of channels for each shot before reading the PPF. If only i had a dynamical string array generator..."
     },
     "channel[#]/position/r": {
-       "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "%TDI%_aux=jet(\"PPF/HRTS/TE\",{{ SHOT }}); _sig = dim_of(_aux,0)"
+        "MAP_TYPE": "EXPR",
+        "PARAMETERS": {
+			"X": "_r[#]"
         },
-        "COMMENT": "The final syntax of this string may change"
+        "EXPR":"X"
     },
     "channel[#]/position/z": {
-       "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "%TDI%_aux=jet(\"PPF/HRTS/Z\",{{ SHOT }}); _sig = value_of(_aux)"
+        "MAP_TYPE": "EXPR",
+        "PARAMETERS": {
+			"X": "_z[#]"
         },
-        "COMMENT": "The final syntax of this string may change"
+        "EXPR":"X"
     },
     "channel[#]/position/phi": {
         "MAP_TYPE": "VALUE",
         "VALUE": 0
     },
     "channel[#]/t_e/data": {
-       "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "%TDI%_aux=jet(\"PPF/HRTS/TE\",{{ SHOT }}); _sig = value_of(_aux)"
+        "MAP_TYPE": "EXPR",
+        "PARAMETERS": {
+			"X": "_t_e[#]"
         },
-        "COMMENT": "The final syntax of this string may change"
+        "EXPR":"X"
     },
     "channel[#]/t_e/time": {
-       "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "%TDI%_aux=jet(\"PPF/HRTS/TE\",{{ SHOT }}); _sig = dim_of(_aux,1)"
+        "MAP_TYPE": "EXPR",
+        "PARAMETERS": {
+			"X": "time"
         },
-        "COMMENT": "The final syntax of this string may change"
+        "EXPR":"X"
     },
     "channel[#]/n_e/data": {
-       "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "%TDI%_aux=jet(\"PPF/HRTS/NE\",{{ SHOT }}); _sig = value_of(_aux)"
+        "MAP_TYPE": "EXPR",
+        "PARAMETERS": {
+			"X": "_n_e[#]"
         },
-        "COMMENT": "The final syntax of this string may change"
+        "EXPR":"X"
     },
     "channel[#]/n_e/time": {
-       "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "%TDI%_aux=jet(\"PPF/HRTS/NE\",{{ SHOT }}); _sig = dim_of(_aux,1)"
+        "MAP_TYPE": "EXPR",
+        "PARAMETERS": {
+			"X": "time"
         },
-        "COMMENT": "The final syntax of this string may change"
+        "EXPR":"X"
     }
 }
