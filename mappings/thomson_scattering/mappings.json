@@ -22,13 +22,22 @@
         "VALUE": 1,
         "COMMENT": "Provenance for the whole IDS"
     },
+    "_r": {
+       "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/TE\",{{ SHOT }}); _sig = dim_of(_aux,0)"
+        },
+        "COMMENT": "The final syntax of this string may change"
+    },
     "channel": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ length(CH_NAMES) }}"
+        "MAP_TYPE": "DIMENSION",
+        "DIM_PROBE": "_r"
     },
     "channel[#]/name": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at(CH_NAMES, indices.0) }}"
+        "VALUE": "{{ at(CH_NAMES, indices.0) }}",
+        "COMMENT": "The array defined in globals is oversized since i have no clue what is the total number of channels for each shot before reading the PPF. If only i had a dynamical string array generator..."
     },
     "channel[#]/position/r": {
        "MAP_TYPE": "PLUGIN",
