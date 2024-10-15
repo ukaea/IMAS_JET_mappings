@@ -9,17 +9,77 @@
     },
     "ids_properties/provider": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "Gabor Szepesi",
+        "VALUE": "Rui Coelho",
         "COMMENT": "Automatic from PPF metadata"
     },
     "ids_properties/creation_date": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "TO BE ADDED",
-        "COMMENT": "Automatic from PPF metadata"
+        "VALUE": "11.11.2024",
+        "COMMENT": "Ideally from system date..."
     },
     "ids_properties/node": {
         "MAP_TYPE": "VALUE",
         "VALUE": 1,
         "COMMENT": "Provenance for the whole IDS"
+    },
+    "channel": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ length(CH_NAMES) }}"
+    },
+    "channel[#]/name": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ at(CH_NAMES, indices.0) }}"
+    },
+    "channel[#]/position/r": {
+       "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/TE\",{{ SHOT }}); _sig = dim_of(_aux,0)"
+        },
+        "COMMENT": "The final syntax of this string may change"
+    },
+    "channel[#]/position/z": {
+       "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/Z\",{{ SHOT }}); _sig = value_of(_aux)"
+        },
+        "COMMENT": "The final syntax of this string may change"
+    },
+    "channel[#]/position/phi": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 0
+    },
+    "channel[#]/t_e/data": {
+       "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/TE\",{{ SHOT }}); _sig = value_of(_aux)"
+        },
+        "COMMENT": "The final syntax of this string may change"
+    },
+    "channel[#]/t_e/time": {
+       "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/TE\",{{ SHOT }}); _sig = dim_of(_aux,1)"
+        },
+        "COMMENT": "The final syntax of this string may change"
+    },
+    "channel[#]/n_e/data": {
+       "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/NE\",{{ SHOT }}); _sig = value_of(_aux)"
+        },
+        "COMMENT": "The final syntax of this string may change"
+    },
+    "channel[#]/n_e/time": {
+       "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/NE\",{{ SHOT }}); _sig = dim_of(_aux,1)"
+        },
+        "COMMENT": "The final syntax of this string may change"
     }
 }
