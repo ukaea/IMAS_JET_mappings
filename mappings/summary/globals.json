@@ -1,3 +1,4 @@
 {
-    "COMMENT1": "Global variables unique to the SUMMARY IDS needed for templating"
+    "UNIT_SF": 1000,
+    "DEG2RAD": "0.01745329"
 }

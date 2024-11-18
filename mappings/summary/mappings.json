@@ -1,95 +1,150 @@
 {
     "ids_properties/homogeneous_time": {
         "MAP_TYPE": "VALUE",
-        "VALUE": 2
+        "VALUE": 1
     },
-    "global_quantities/ip": {
+    "time": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JETCPF_Reader",
+        "PLUGIN": "JET_CPF",
+        "ARGS": {
+            "signal": "time"
+        }
+    },
+    "global_quantities/ip/value": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "JET_CPF",
         "ARGS": {
             "signal": "MAGN/IPLA"
         }
     },
-    "global_quantities/r0": {
+    "global_quantities/ip/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "CPF:MAGN/IPLA"
+    },
+    "global_quantities/r0/value": {
         "MAP_TYPE": "VALUE",
         "VALUE": 2.96
     },
-    "global_quantities/b0": {
+    "global_quantities/b0/value": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JETCPF_Reader",
+        "PLUGIN": "JET_CPF",
         "ARGS": {
             "signal": "MAGN/BVAC"
         }
     },
-    "global_quantities/q_95": {
+    "global_quantities/b0/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "CPF:MAGN/BVAC"
+    },
+    "global_quantities/q_95/value": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JETCPF_Reader",
+        "PLUGIN": "JET_CPF",
         "ARGS": {
             "signal": "EFIT/Q95"
         }
     },
-    "global_quantities/power_ohm": {
+    "global_quantities/q_95/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "CPF:EFIT/Q95"
+    },
+    "global_quantities/power_ohm/value": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JETCPF_Reader",
+        "PLUGIN": "JET_CPF",
         "ARGS": {
             "signal": "EFIT/POHM"
         }
     },
-    "boundary/elongation": {
+    "global_quantities/power_ohm/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "CPF:EFIT/POHM"
+    },
+    "boundary/elongation/value": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JETCPF_Reader",
+        "PLUGIN": "JET_CPF",
         "ARGS": {
             "signal": "EFIT/ELON"
         }
     },
-    "boundary/triangularity_upper": {
+    "boundary/elongation/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "CPF:EFIT/ELON"
+    },
+    "boundary/triangularity_upper/value": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JETCPF_Reader",
+        "PLUGIN": "JET_CPF",
         "ARGS": {
             "signal": "EFIT/TRIU"
         }
     },
-    "boundary/triangularity_lower": {
+    "boundary/triangularity_upper/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "CPF:EFIT/TRIU"
+    },
+    "boundary/triangularity_lower/value": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JETCPF_Reader",
+        "PLUGIN": "JET_CPF",
         "ARGS": {
             "signal": "EFIT/TRIL"
         }
     },
-    "local/magnetics_axis/n_e": {
+    "boundary/triangularity_lower/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "CPF:EFIT/TRIL"
+    },
+    "local/magnetic_axis/n_e/value": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JETCPF_Reader",
+        "PLUGIN": "JET_CPF",
         "ARGS": {
             "signal": "HRTX/NE0"
         }
     },
-    "local/magnetics_axis/t_e": {
+    "local/magnetic_axis/n_e/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "CPF:HRTX/NE0"
+    },
+    "local/magnetic_axis/t_e/value": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JETCPF_Reader",
+        "PLUGIN": "JET_CPF",
         "ARGS": {
             "signal": "HRTX/TE0"
         }
     },
-    "_local/magnetics_axis/p_e": {
+    "local/magnetic_axis/t_e/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "CPF:HRTX/TE0"
+    },
+    "_local/magnetic_axis/p_e/value": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JETCPF_Reader",
+        "PLUGIN": "JET_CPF",
         "ARGS": {
             "signal": "HRTX/PE0"
         },
         "COMMENT": "No equivalent in the IDS"
     },
-    "heating_current_drive/power_nbi": {
+    "_local/magnetic_axis/p_e/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "CPF:HRTX/PE0"
+    },
+    "heating_current_drive/power_nbi/value": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JETCPF_Reader",
+        "PLUGIN": "JET_CPF",
         "ARGS": {
             "signal": "NBI/NBLM"
         }
     },
-    "heating_current_drive/power_ic": {
+    "heating_current_drive/power_nbi/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "CPF:NBI/NBLM"
+    },
+    "_heating_current_drive/power_ic/value": {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JETCPF_Reader",
+        "PLUGIN": "JET_CPF",
         "ARGS": {
             "signal": "ICRH/PTOT"
         }
+    },
+    "heating_current_drive/power_ic/source": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "CPF:ICRH/PTOT"
     }
 }
