@@ -17,14 +17,9 @@
         "VALUE": "TO BE ADDED",
         "COMMENT": "Automatic from PPF metadata"
     },
-    "ids_properties/node": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1,
-        "COMMENT": "Provenance for the whole IDS"
-    },
     "ip": {
         "MAP_TYPE": "VALUE",
-        "VALUE": 
+        "VALUE": 1
     },
     "ip[#]": {
         "MAP_TYPE": "PLUGIN",
@@ -63,11 +58,11 @@
     },
     "b_field_pol_probe[#]/position/r": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at(BPOL_R, indices.0) }}",
+        "VALUE": "{{ at(BPOL_R, indices.0) }}"
     },
     "b_field_pol_probe[#]/position/z": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at(BPOL_Z, indices.0) }}",
+        "VALUE": "{{ at(BPOL_Z, indices.0) }}"
     },
     "b_field_pol_probe[#]/position/phi": {
         "MAP_TYPE": "VALUE",
@@ -79,7 +74,7 @@
     },
     "b_field_pol_probe[#]/position/length": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at(BPOL_LENGTH, indices.0) }}",
+        "VALUE": "{{ at(BPOL_LENGTH, indices.0) }}"
     },
     "_b_field_pol_probe[#]/turns": {
         "MAP_TYPE": "VALUE",
@@ -122,6 +117,8 @@
         "VALUE": "<INSERT>"
     },
     "flux_loop[#]/position": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "<INSERT FROM FL_POSITION_R SIZE>"
     },
     "flux_loop[#]/position[#]/r": {
         "MAP_TYPE": "VALUE",
