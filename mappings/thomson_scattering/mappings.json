@@ -17,11 +17,6 @@
         "VALUE": "11.11.2024",
         "COMMENT": "Ideally from system date..."
     },
-    "ids_properties/node": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1,
-        "COMMENT": "Provenance for the whole IDS"
-    },
     "_r": {
        "MAP_TYPE": "PLUGIN",
         "PLUGIN": "MDSPLUS",
