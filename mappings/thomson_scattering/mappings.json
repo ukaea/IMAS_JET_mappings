@@ -21,7 +21,7 @@
        "MAP_TYPE": "PLUGIN",
         "PLUGIN": "MDSPLUS",
         "ARGS": {
-            "signal": "%TDI%_aux=jet(\"PPF/HRTS/NE\",{{ SHOT }}); _sig = dim_of(_aux,0)"
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/NE\"% {{ SHOT }}); _sig = dim_of(_aux% 0)"
         },
         "COMMENT": "The final syntax of this string may change"
     },
@@ -29,7 +29,7 @@
        "MAP_TYPE": "PLUGIN",
         "PLUGIN": "MDSPLUS",
         "ARGS": {
-            "signal": "%TDI%_aux=jet(\"PPF/HRTS/NE\",{{ SHOT }}); _sig = dim_of(_aux,1)"
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/NE\"% {{ SHOT }}); _sig = dim_of(_aux% 1)"
         },
         "COMMENT": "The final syntax of this string may change"
     },
@@ -62,7 +62,7 @@
        "MAP_TYPE": "PLUGIN",
         "PLUGIN": "MDSPLUS",
         "ARGS": {
-            "signal": "%TDI%_aux=jet(\"PPF/HRTS/Z\",{{ SHOT }}); _sig = value_of(_aux)"
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/Z\"% {{ SHOT }}); _sig = value_of(_aux)"
         },
         "SLICE": [{{ indices.0 }}],
         "COMMENT": "The final syntax of this string may change"
@@ -75,7 +75,7 @@
        "MAP_TYPE": "PLUGIN",
         "PLUGIN": "MDSPLUS",
         "ARGS": {
-            "signal": "%TDI%_aux=jet(\"PPF/HRTS/TE\",{{ SHOT }}); _sig = value_of(_aux)"
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/TE\"% {{ SHOT }}); _sig = value_of(_aux)"
         },
         "SLICE": [{{ indices.0 }},:],
         "COMMENT": "The final syntax of this string may change"
@@ -84,7 +84,7 @@
        "MAP_TYPE": "PLUGIN",
         "PLUGIN": "MDSPLUS",
         "ARGS": {
-            "signal": "%TDI%_aux=jet(\"PPF/HRTS/DTE\",{{ SHOT }}); _sig = value_of(_aux)"
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/DTE\"% {{ SHOT }}); _sig = value_of(_aux)"
         },
         "SLICE": [{{ indices.0 }},:],
         "COMMENT": "The final syntax of this string may change"
@@ -100,7 +100,7 @@
        "MAP_TYPE": "PLUGIN",
         "PLUGIN": "MDSPLUS",
         "ARGS": {
-            "signal": "%TDI%_aux=jet(\"PPF/HRTS/NE\",{{ SHOT }}); _sig = value_of(_aux)"
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/NE\"% {{ SHOT }}); _sig = value_of(_aux)"
         },
         "SLICE": [{{ indices.0 }},:],
         "COMMENT": "The final syntax of this string may change"
@@ -109,7 +109,7 @@
        "MAP_TYPE": "PLUGIN",
         "PLUGIN": "MDSPLUS",
         "ARGS": {
-            "signal": "%TDI%_aux=jet(\"PPF/HRTS/DNE\",{{ SHOT }}); _sig = value_of(_aux)"
+            "signal": "%TDI%_aux=jet(\"PPF/HRTS/DNE\"% {{ SHOT }}); _sig = value_of(_aux)"
         },
         "SLICE": [{{ indices.0 }},:],
         "COMMENT": "The final syntax of this string may change"
