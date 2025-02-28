@@ -64,7 +64,7 @@
         "ARGS": {
             "signal": "%TDI%_aux=jet(\"PPF/HRTS/Z\"% {{ SHOT }}); _sig = value_of(_aux)"
         },
-        "SLICE": [{{ indices.0 }}],
+        "SLICE": "[{{ indices.0 }}]",
         "COMMENT": "The final syntax of this string may change"
     },
     "channel[#]/position/phi": {
@@ -77,7 +77,7 @@
         "ARGS": {
             "signal": "%TDI%_aux=jet(\"PPF/HRTS/TE\"% {{ SHOT }}); _sig = value_of(_aux)"
         },
-        "SLICE": [{{ indices.0 }},:],
+        "SLICE": "[{{ indices.0 }},:]",
         "COMMENT": "The final syntax of this string may change"
     },
      "channel[#]/t_e/data_error_upper": {
@@ -86,7 +86,7 @@
         "ARGS": {
             "signal": "%TDI%_aux=jet(\"PPF/HRTS/DTE\"% {{ SHOT }}); _sig = value_of(_aux)"
         },
-        "SLICE": [{{ indices.0 }},:],
+        "SLICE": "[{{ indices.0 }},:]",
         "COMMENT": "The final syntax of this string may change"
     },
     "channel[#]/t_e/time": {
@@ -102,7 +102,7 @@
         "ARGS": {
             "signal": "%TDI%_aux=jet(\"PPF/HRTS/NE\"% {{ SHOT }}); _sig = value_of(_aux)"
         },
-        "SLICE": [{{ indices.0 }},:],
+        "SLICE": "[{{ indices.0 }},:]",
         "COMMENT": "The final syntax of this string may change"
     },
      "channel[#]/n_e/data_error_upper": {
@@ -111,7 +111,7 @@
         "ARGS": {
             "signal": "%TDI%_aux=jet(\"PPF/HRTS/DNE\"% {{ SHOT }}); _sig = value_of(_aux)"
         },
-        "SLICE": [{{ indices.0 }},:],
+        "SLICE": "[{{ indices.0 }},:]",
         "COMMENT": "The final syntax of this string may change"
     },
     "channel[#]/n_e/time": {
