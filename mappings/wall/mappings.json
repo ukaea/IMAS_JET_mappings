@@ -1,7 +1,7 @@
 {
     "ids_properties/homogeneous_time": {
         "MAP_TYPE": "VALUE",
-        "VALUE": 0
+        "VALUE": 2
     },
     "ids_properties/comment": {
         "MAP_TYPE": "VALUE",
@@ -21,5 +21,43 @@
         "MAP_TYPE": "VALUE",
         "VALUE": 1,
         "COMMENT": "Provenance for the whole IDS"
+    },
+    "description_2d": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1
+    },
+    "description_2d[#]/type/name": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "single_unit_vessel"
+    },
+    "description_2d[#]/type/index": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 0
+    },
+    "description_2d[#]/type/description": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Limiter structure is using a single unit, the vessel structure is filled"
+    },
+    "description_2d[#]/limiter/unit": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1
+    },
+    "description_2d[#]/limiter/unit[#]/closed": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1
+    },
+    "description_2d[#]/limiter/unit[#]/outline/r": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "_sig=jet(\"PPF/EFIT/RLIM\"% {{ shot }})"
+        }
+    },
+    "description_2d[#]/limiter/unit[#]/outline/z": {
+		"MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "_sig=jet(\"PPF/EFIT/ZLIM\"% {{ shot }})"
+        }
     }
 }
