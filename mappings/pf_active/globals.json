@@ -1,0 +1,35 @@
+{
+    "Comment": "Add any variables in here that are needed by your mappings",
+    "Templating": "These can be used for substitution in the signal names",
+    "Hello": "World",
+    "PF_ACTIVE": [
+        "P1Eu_P1El", "P1C_P3M", "P4U", "P3SU", "P3RU", "P2RU", "P2SU",
+        "P4L", "P3SL", "P3RL", "P2RL", "P2SL", "D1", "D2", "D3", "D4"
+    ],
+    "PF_COIL_ELEMENTS": "{{ at(PF_COILS, indices.0).elements }}",
+    "PF_COIL_NAME": "{{ at(PF_COILS, indices.0).name }}",
+    "PF_COILS": [
+        {
+            "name":"P1Eu_P1El",
+            "elements":[
+                {"turns":71, "r":0.897, "z":2.461, "width":0.337, "height":0.505},
+                {"turns":71, "r":0.897, "z":1.911, "width":0.337, "height":0.505},
+                {"turns":71, "r":0.897, "z":-1.911, "width":0.337, "height":0.505},
+                {"turns":71, "r":0.897, "z":-2.461, "width":0.337, "height":0.505}
+            ]
+        },
+        {
+            "name":"P1C_P3M",
+            "elements":[
+                {"turns":71, "r":0.897, "z":1.361, "width":0.337, "height":0.505},
+                {"turns":71, "r":0.897, "z":0.811, "width":0.337, "height":0.505},
+                {"turns":71, "r":0.897, "z":0.261, "width":0.337, "height":0.505},
+                {"turns":71, "r":0.897, "z":-0.261, "width":0.337, "height":0.505},
+                {"turns":71, "r":0.897, "z":-0.811, "width":0.337, "height":0.505},
+                {"turns":71, "r":0.897, "z":-1.361, "width":0.337, "height":0.505},
+                {"turns":2, "r":3.845, "z":3.107, "width":0.072, "height":0.082},
+                {"turns":2, "r":3.845, "z":-3.107, "width":0.072, "height":0.082}
+            ]
+        }
+    ]
+}
