@@ -1,7 +1,45 @@
 {
     "ids_properties/homogeneous_time": {
         "MAP_TYPE": "VALUE",
-        "VALUE": 0
+        "VALUE": 1
+    },
+    "ids_properties/comment": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "JET data mapped using UDA and JSON Mapping Plugin"
+    },
+    "ids_properties/provider": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Rui Coelho, Adam Parker and Gabor Szepesi",
+        "COMMENT": "Automatic from PPF data and hardcoded static data stored in globals"
+    },
+    "ids_properties/creation_date": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "03.07.2025",
+        "COMMENT": "Ideally from system date..."
+    },
+    "_data1": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "_aux=jet(\"PPF/MAGN/ECME\"% {{ shot }}); _sig = value_of(_aux)"
+        },
+        "COMMENT": "This contains the first batch of data for the PF_ACTIVE coils"
+    },
+    "_data2": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
+        },
+        "COMMENT": "This contains the second batch of data for the PF_ACTIVE coils"
+    },
+    "time": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "_aux=jet(\"PPF/MAGN/IPLA\"% {{ shot }}); _sig = dim_of(_aux% 0)"
+        },
+        "COMMENT": "Time is supposed to be homogeneous since taken from MAGN/IPLA..."
     },
     "coil": {
         "MAP_TYPE": "VALUE",
