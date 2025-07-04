@@ -70,7 +70,7 @@
     },
     "coil[#]/element" : {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ length(PF_COIL_ELEMENTS) }}"
+        "VALUE": "{{ length(at(PF_COILS, indices.0).elements) }}"
     },
     "coil[#]/element[#]/identifier" : {
         "MAP_TYPE": "VALUE",
@@ -78,7 +78,7 @@
     },
     "coil[#]/element[#]/turns_with_sign" : {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at(PF_COILS_ELEMENTS, indices.1).turns }}"
+        "VALUE": "{{ at( at(PF_COILS, indices.0).elements, indices.1).turns }}"
     },
     "coil[#]/element[#]/geometry/geometry_type": {
         "MAP_TYPE": "VALUE",
@@ -87,18 +87,18 @@
     },
     "coil[#]/element[#]/geometry/rectangle/r": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at(PF_COILS_ELEMENTS, indices.1).r }}"
+        "VALUE": "{{ at( at(PF_COILS, indices.0).elements, indices.1).r }}"
     },
     "coil[#]/element[#]/geometry/rectangle/z": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at(PF_COILS_ELEMENTS, indices.1).z }}"
+        "VALUE": "{{ at( at(PF_COILS, indices.0).elements, indices.1).z }}"
     },
     "coil[#]/element[#]/geometry/rectangle/width": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at(PF_COILS_ELEMENTS, indices.1).width }}"
+        "VALUE": "{{ at( at(PF_COILS, indices.0).elements, indices.1).width }}"
     },
     "coil[#]/element[#]/geometry/rectangle/height": {
         "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at(PF_COILS_ELEMENTS, indices.1).height }}"
+        "VALUE": "{{ at( at(PF_COILS, indices.0).elements, indices.1).height }}"
     }
 }

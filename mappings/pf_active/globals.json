@@ -1,5 +1,4 @@
 {
-    "PF_COIL_ELEMENTS": "{{ at(PF_COILS, indices.0).elements }}",
     "PF_COIL_NAME": "{{ at(PF_COILS, indices.0).name }}",
     "PF_COIL_CURRENT": "{{ at(PF_COILS, indices.0).current }}",
     "PF_COILS": [
