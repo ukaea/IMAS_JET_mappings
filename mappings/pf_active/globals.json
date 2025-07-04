@@ -1,9 +1,7 @@
 {
-    "Comment": "Add any variables in here that are needed by your mappings",
-    "Templating": "These can be used for substitution in the signal names",
-    "Hello": "World",
     "PF_COIL_ELEMENTS": "{{ at(PF_COILS, indices.0).elements }}",
     "PF_COIL_NAME": "{{ at(PF_COILS, indices.0).name }}",
+    "PF_COIL_CURRENT": "{{ at(PF_COILS, indices.0).current }}",
     "PF_COILS": [
         {
             "name":"P1Eu_P1El",
@@ -12,7 +10,8 @@
                 {"turns":71, "r":0.897, "z":1.911, "width":0.337, "height":0.505},
                 {"turns":71, "r":0.897, "z":-1.911, "width":0.337, "height":0.505},
                 {"turns":71, "r":0.897, "z":-2.461, "width":0.337, "height":0.505}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/ECME\"% {{ shot }}); _sig = value_of(_aux)"
         },
         {
             "name":"P1C_P3M",
@@ -25,71 +24,83 @@
                 {"turns":71, "r":0.897, "z":-1.361, "width":0.337, "height":0.505},
                 {"turns":2, "r":3.845, "z":3.107, "width":0.072, "height":0.082},
                 {"turns":2, "r":3.845, "z":-3.107, "width":0.072, "height":0.082}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/ECME\"% {{ shot }}); _sig = value_of(_aux)"
+
         },
         {
             "name":"P4U",
             "elements":[
                 {"turns":15.75, "r":5.302, "z":1.431, "width":0.294, "height":0.182},
                 {"turns":45.25, "r":5.302, "z":0.991, "width":0.294, "height":0.582}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
         },
         {
             "name":"P3SU",
             "elements":[
                 {"turns":30, "r":3.993, "z":2.907, "width":0.368, "height":0.282}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
         },
         {
             "name":"P3RU",
             "elements":[
                 {"turns":20, "r":3.993, "z":2.707, "width":0.368, "height":0.082}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
         },
         {
             "name":"P2RU",
             "elements":[
                 {"turns":16, "r":2.024, "z":3.748, "width":0.149, "height":0.180}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
         },
         {
             "name":"P2SU",
             "elements":[
                 {"turns":20, "r":2.318, "z":3.846, "width":0.187, "height":0.375},
                 {"turns":8, "r":2.024, "z":3.943, "width":0.149, "height":0.180}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
         },
         {
             "name":"P4L",
             "elements":[
                 {"turns":15.75, "r":5.302, "z":-1.431, "width":0.294, "height":0.182},
                 {"turns":45.25, "r":5.302, "z":-0.991, "width":0.294, "height":0.582}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
         },
         {
             "name":"P3SL",
             "elements":[
                 {"turns":30, "r":3.993, "z":-2.907, "width":0.368, "height":0.282}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
         },
         {
             "name":"P3RL",
             "elements":[
                 {"turns":20, "r":3.993, "z":-2.707, "width":0.368, "height":0.082}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
         },
         {
             "name":"P2RL",
             "elements":[
                 {"turns":16, "r":2.024, "z":-3.748, "width":0.149, "height":0.180}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
         },
         {
             "name":"P2SL",
             "elements":[
                 {"turns":20, "r":2.318, "z":-3.846, "width":0.187, "height":0.375},
                 {"turns":8, "r":2.024, "z":-3.943, "width":0.149, "height":0.180}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
         },
         {
             "name":"D1",
@@ -97,28 +108,32 @@
                 {"turns":9.41, "r":2.098, "z":-1.569, "width":0.165, "height":0.121},
                 {"turns":3.76, "r":2.115, "z":-1.662, "width":0.131, "height":0.059},
                 {"turns":2.82, "r":2.132, "z":-1.724, "width":0.097, "height":0.059}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
         },
         {
             "name":"D2",
             "elements":[
                 {"turns":1, "r":2.382, "z":-1.911, "width":0.031, "height":0.059},
                 {"turns":14, "r":2.518, "z":-1.911, "width":0.232, "height":0.123}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
         },
         {
             "name":"D3",
             "elements":[
                 {"turns":1, "r":2.967, "z":-1.911, "width":0.031, "height":0.059},
                 {"turns":14, "r":2.831, "z":-1.911, "width":0.232, "height":0.123}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
         },
         {
             "name":"D4",
             "elements":[
                 {"turns":17.18, "r":3.396, "z":-1.543, "width":0.198, "height":0.183},
                 {"turns":3.82, "r":3.362, "z":-1.667, "width":0.131, "height":0.059}
-            ]
+            ],
+            "current": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
         }
     ]
 }

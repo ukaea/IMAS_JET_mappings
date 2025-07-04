@@ -53,21 +53,23 @@
         "MAP_TYPE": "VALUE",
         "VALUE": "PF_COIL_{{ indices.0 + 1 }}"
     },
-    "_coil[#]/current" : {
-        "COMMENT": "<TODO>"
-    },
-    "_coil[#]/current/time": {
-        "COMMENT": "<TODO>"
+    "coil[#]/current/data" : {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "{{ PF_COIL_CURRENT }}"
+        }
     },
     "coil[#]/function": {
         "MAP_TYPE": "VALUE",
         "VALUE": 1
     },
     "_coil[#]/function[#]/index": {
-        "COMMENT": "<TODO>"
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1
     },
     "coil[#]/element" : {
-        "MAP_TYPE": "DIMENSION",
+        "MAP_TYPE": "VALUE",
         "VALUE": "{{ length(PF_COIL_ELEMENTS) }}"
     },
     "coil[#]/element[#]/identifier" : {
@@ -82,9 +84,6 @@
         "MAP_TYPE": "VALUE",
         "VALUE": 2,
         "COMMENT": "2 for rectangle"
-    },
-    "_coil[#]/element[#]/geometry/rectangle/size": {
-        "COMMENT": "<TODO>"
     },
     "coil[#]/element[#]/geometry/rectangle/r": {
         "MAP_TYPE": "VALUE",
