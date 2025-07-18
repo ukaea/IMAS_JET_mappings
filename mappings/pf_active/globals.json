@@ -1,9 +1,6 @@
 {
-    "Comment": "Add any variables in here that are needed by your mappings",
-    "Templating": "These can be used for substitution in the signal names",
-    "Hello": "World",
-    "PF_COIL_ELEMENTS": "{{ at(PF_COILS, indices.0).elements }}",
     "PF_COIL_NAME": "{{ at(PF_COILS, indices.0).name }}",
+    "PF_COIL_CURRENT": "{{ at(PF_COILS, indices.0).current }}",
     "PF_COILS": [
         {
             "name":"P1Eu_P1El_P3M",
