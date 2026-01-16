@@ -1,105 +1,35 @@
 {
-    "ids_properties/homogeneous_time": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1
-    },
-    "ids_properties/comment": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "JET data mapped using UDA and JSON Mapping Plugin"
-    },
-    "ids_properties/provider": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "Rui Coelho, Adam Parker and Gabor Szepesi",
-        "COMMENT": "Automatic from PPF data and hardcoded static data stored in globals"
-    },
-    "ids_properties/creation_date": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "03.07.2025",
-        "COMMENT": "Ideally from system date..."
-    },
+    "ids_properties/homogeneous_time": 1,
+    "ids_properties/comment": "JET data mapped using UDA and JSON Mapping Plugin",
+    "ids_properties/provider": "Rui Coelho, Adam Parker and Gabor Szepesi",
+    "ids_properties/creation_date": "03.07.2025",
     "time": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_aux=jet(\"PPF/MAGC/IPLA\"% {{ shot }}); _sig = dim_of(_aux% 0)"
-        },
-        "COMMENT": "Time is supposed to be homogeneous since taken from MAGN/IPLA..."
+            "signal": "PPF/MAGC/IPLA",
+			"suffix": "dim_of(_aux, 0)"
+        }
     },
-    "coil": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ length(PF_COILS) }}"
-    },
-    "coil[#]/name": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ PF_COIL_NAME }}"
-    },
-    "coil[#]/identifier" : {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "PF_COIL_{{ indices.0 + 1 }}"
-    },
+    "coil": "{{ length(PF_COILS) }}",
+    "coil[#]/name": "{{ PF_COIL_NAME }}",
+    "coil[#]/identifier" : "PF_COIL_{{ #0 + 1 }}",
     "coil[#]/current/data" : {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "CUSTOM_JET",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "CUSTOM_JET",
         "ARGS": {
             "coil_name": "{{ PF_COIL_NAME }}"
         },
 		"FUNCTION": "pf_coil_current"
     },
-    "coil[#]/function": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1
-    },
-    "_coil[#]/function[#]/index": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1
-    },
-    "coil[#]/element" : {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ length(at(PF_COILS, indices.0).elements) }}"
-    },
-    "coil[#]/element[#]/identifier" : {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "PF_COIL_{{ indices.0 + 1 }}_E{{ indices.1 + 1 }}"
-    },
-    "coil[#]/element[#]/turns_with_sign" : {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at( at(PF_COILS, indices.0).elements, indices.1).turns }}"
-    },
-    "coil[#]/element[#]/geometry/geometry_type": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 2,
-        "COMMENT": "2 for rectangle"
-    },
-    "coil[#]/element[#]/geometry/rectangle/r": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at( at(PF_COILS, indices.0).elements, indices.1).r }}"
-    },
-    "coil[#]/element[#]/geometry/rectangle/z": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at( at(PF_COILS, indices.0).elements, indices.1).z }}"
-    },
-    "coil[#]/element[#]/geometry/rectangle/width": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at( at(PF_COILS, indices.0).elements, indices.1).width }}"
-    },
-    "coil[#]/element[#]/geometry/rectangle/height": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at( at(PF_COILS, indices.0).elements, indices.1).height }}"
-    },
-	"_data1": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/MAGN/ECME\"% {{ shot }}); _sig = value_of(_aux)"
-        },
-        "COMMENT": "This contains the first batch of data for the PF_ACTIVE coils"
-    },
-    "_data2": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
-        },
-        "COMMENT": "This contains the second batch of data for the PF_ACTIVE coils"
-    }
+    "coil[#]/function": 1,
+    "coil[#]/function[#]/index": 1,
+    "coil[#]/element" : "{{ length(at(PF_COILS, indices.0).elements) }}",
+    "coil[#]/element[#]/identifier" : "PF_COIL_{{ #0 + 1 }}_E{{ #1 + 1 }}",
+    "coil[#]/element[#]/turns_with_sign" : "{{ PF_COIL_ELEMENT_TURNS }}",
+    "coil[#]/element[#]/geometry/geometry_type": 2,
+    "coil[#]/element[#]/geometry/rectangle/r": "{{ PF_COIL_ELEMENT_R }}",
+    "coil[#]/element[#]/geometry/rectangle/z": "{{ PF_COIL_ELEMENT_Z }}",
+    "coil[#]/element[#]/geometry/rectangle/width": "{{ PF_COIL_ELEMENT_WIDTH }}",
+    "coil[#]/element[#]/geometry/rectangle/height": "{{ PF_COIL_ELEMENT_HEIGHT }}"
 }

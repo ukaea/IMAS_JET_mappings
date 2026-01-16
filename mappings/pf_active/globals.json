@@ -1,5 +1,11 @@
 {
     "PF_COIL_NAME": "{{ at(PF_COILS, indices.0).name }}",
+    "PF_COIL_ELEMENTS": "{{ at(PF_COILS, indices.0).elements }}",
+    "PF_COIL_ELEMENT_TURNS": "{{ at(at(PF_COILS, indices.0).elements, indices.1).turns }}",
+    "PF_COIL_ELEMENT_R": "{{ at(at(PF_COILS, indices.0).elements, indices.1).r }}",
+    "PF_COIL_ELEMENT_Z": "{{ at(at(PF_COILS, indices.0).elements, indices.1).z }}",
+    "PF_COIL_ELEMENT_WIDTH": "{{ at(at(PF_COILS, indices.0).elements, indices.1).width }}",
+    "PF_COIL_ELEMENT_HEIGHT": "{{ at(at(PF_COILS, indices.0).elements, indices.1).height }}",
     "PF_COILS": [
         {
             "name":"P1Eu_P1El_P3M",
