@@ -1,26 +1,21 @@
 {
-    "ids_properties/homogeneous_time": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0
-    },
-    "r0": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 2.96
-    },
+    "ids_properties/homogeneous_time": 0,
+    "r0": 2.96,
     "b_field_phi_vacuum_r/data": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/MAGC/BVAC\"% {{ shot }})"
+            "signal": "PPF/MAGC/BVAC"
         },
         "SCALE": "2.96",
         "COMMENT": "r0 * B0"
     },
     "b_field_phi_vacuum_r/time": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/MAGC/BVAC\"% {{ shot }}); dim_of(_sig)"
+            "signal": "PPF/MAGC/BVAC",
+            "suffix": "dim_of(_aux)"
         }
     }
 }

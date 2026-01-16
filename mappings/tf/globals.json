@@ -1,5 +1,4 @@
 {
     "Comment": "Add any variables in here that are needed by your mappings",
-    "Templating": "These can be used for substitution in the signal names",
-    "Hello": "World"
+    "Templating": "These can be used for substitution in the signal names"
 }
