@@ -1,38 +1,22 @@
 {
-    "ids_properties/homogeneous_time": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1
-    },
-    "ids_properties/comment": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "JET data mapped using UDA and JSON Mapping Plugin"
-    },
-    "ids_properties/provider": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "Rui Coelho",
-        "COMMENT": "Automatic from PPF metadata"
-    },
-    "ids_properties/creation_date": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "05.11.2025",
-        "COMMENT": "Ideally from system date..."
-    },
+    "ids_properties/homogeneous_time": 1,
+    "ids_properties/comment": "JET data mapped using UDA and JSON Mapping Plugin",
+    "ids_properties/provider": "Rui Coelho",
+    "ids_properties/creation_date": "05.11.2025",
     "time": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_aux=jet(\"PPF/EFTP/XIPC\"% {{ shot }}); _sig = dim_of(_aux% 1)"
+            "signal": "PPF/EFTP/XIPC",
+			"suffix": "dim_of(_aux, 1)"
         }
     },
-    "vacuum_toroidal_field/r0": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 2.96
-    },
+    "vacuum_toroidal_field/r0": 2.96,
     "vacuum_toroidal_field/b0": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/BVAC\"% {{ shot }})"
+            "signal": "PPF/EFTP/BVAC"
         }
     },
     "time_slice": {
@@ -40,233 +24,222 @@
         "DIM_PROBE": "time"
     },
     "time_slice[#]/boundary/minor_radius": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/CR0\"% {{ shot }})"
+            "signal": "PPF/EFTP/CR0"
         }
     },
     "time_slice[#]/boundary/elongation": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/ELON\"% {{ shot }})"
+            "signal": "PPF/EFTP/ELON"
         }
     },
     "time_slice[#]/boundary/triangularity_upper": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/TRIU\"% {{ shot }})"
+            "signal": "PPF/EFTP/TRIU"
         }
     },
     "time_slice[#]/boundary/triangularity_lower": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/TRIL\"% {{ shot }})"
+            "signal": "PPF/EFTP/TRIL"
         }
     },
     "time_slice[#]/boundary/outline/r": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/RBND\"% {{ shot }})"
+            "signal": "PPF/EFTP/RBND"
         }
     },
     "time_slice[#]/boundary/outline/z": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/ZBND\"% {{ shot }})"
+            "signal": "PPF/EFTP/ZBND"
         }
     },
     "time_slice[#]/boundary/geometric_axis/r": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/RGEO\"% {{ shot }})"
+            "signal": "PPF/EFTP/RGEO"
         }
     },
     "time_slice[#]/boundary/geometric_axis/z": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/ZGEO\"% {{ shot }})"
+            "signal": "PPF/EFTP/ZGEO"
         }
     },
     "time_slice[#]/global_quantities/beta_pol": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/BTPM\"% {{ shot }})"
+            "signal": "PPF/EFTP/BTPM"
         }
     },
     "time_slice[#]/global_quantities/ip": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/XIPC\"% {{ shot }})"
+            "signal": "PPF/EFTP/XIPC"
         }
     },
     "time_slice[#]/global_quantities/li_3": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/LI3M\"% {{ shot }})"
+            "signal": "PPF/EFTP/LI3M"
         }
     },
     "time_slice[#]/global_quantities/psi_axis": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/FAXS\"% {{ shot }})"
+            "signal": "PPF/EFTP/FAXS"
         },
         "SCALE": -6.2831853072
     },
     "time_slice[#]/global_quantities/psi_boundary": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/FBND\"% {{ shot }})"
+            "signal": "PPF/EFTP/FBND"
         },
         "SCALE": -6.2831853072
     },
     "time_slice[#]/global_quantities/q_95": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/Q95\"% {{ shot }})"
+            "signal": "PPF/EFTP/Q95"
         }
     },
     "time_slice[#]/global_quantities/magnetic_axis/r": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/RMAG\"% {{ shot }})"
+            "signal": "PPF/EFTP/RMAG"
         }
     },
     "time_slice[#]/global_quantities/magnetic_axis/z": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/ZMAG\"% {{ shot }})"
+            "signal": "PPF/EFTP/ZMAG"
         }
     },
-    "time_slice[#]/profiles_1d/psi": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+    "_time_slice[#]/profiles_1d/psi": {
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
             "signal": "%TDI%_f=jet(\"PPF/EFIT/F\"% {{ shot }}); _nrad=size(_f,0); _nt=size(_f,1); _psiaxaux=jet(\"PPF/EFIT/FAXS\"% {{ shot }}); _psibndaux=jet(\"PPF/EFIT/FBND\"% {{ shot }}); _psiax=SPREAD(_psiaxaux,0,_nrad); _psibnd=SPREAD(_psibndaux,0,_nrad); _sig = BUILD_SIGNAL(_psiax + (_psibnd - _psiax)*SPREAD(dim_of(_f,0),1,_nt),*,dim_of(_f,0),dim_of(_f,1))"
         },
         "SCALE": -6.2831853072
     },
-    "time_slice[#]/profiles_1d/psi_norm": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+    "_time_slice[#]/profiles_1d/psi_norm": {
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
             "signal": "%TDI%_f=jet(\"PPF/EFIT/F\"% {{ shot }}); _sig = BUILD_SIGNAL(SPREAD(dim_of(_f,0),1,_nt),*,dim_of(_f,0),dim_of(_f,1))"
         }
     },
     "time_slice[#]/profiles_1d/phi": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/FTOR\"% {{ shot }})"
+            "signal": "PPF/EFTP/FTOR"
         }
     },
     "time_slice[#]/profiles_1d/pressure": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/P\"% {{ shot }})"
+            "signal": "PPF/EFTP/P"
         }
     },
     "time_slice[#]/profiles_1d/f": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/F\"% {{ shot }})"
+            "signal": "PPF/EFTP/F"
         }
     },
     "time_slice[#]/profiles_1d/dpressure_dpsi": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/DPDP\"% {{ shot }})"
+            "signal": "PPF/EFTP/DPDP"
         },
         "SCALE": -0.1591549430918953
     },
     "time_slice[#]/profiles_1d/f_df_dpsi": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/DFDP\"% {{ shot }})"
+            "signal": "PPF/EFTP/DFDP"
         },
         "SCALE": -2e-7
     },
     "time_slice[#]/profiles_1d/j_tor": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/JSUR\"% {{ shot }})"
+            "signal": "PPF/EFTP/JSUR"
         }
     },
     "time_slice[#]/profiles_1d/q": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/Q\"% {{ shot }})"
+            "signal": "PPF/EFTP/Q"
         }
     },
     "time_slice[#]/profiles_1d/r_inboard": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/RMJI\"% {{ shot }})"
+            "signal": "PPF/EFTP/RMJI"
         }
     },
     "time_slice[#]/profiles_1d/r_outboard": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/RMJO\"% {{ shot }})"
+            "signal": "PPF/EFTP/RMJO"
         }
     },
-    "time_slice[#]/profiles_2d": {
-        "MAP_TYPE": "DIMENSION",
-        "VALUE": 1
-    },
-    "time_slice[#]/profiles_2d[0]/psi": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+    "time_slice[#]/profiles_2d": 1,
+    "_time_slice[#]/profiles_2d[0]/psi": {
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
             "signal": "%TDI%public _psiz=jet(\"PPF/efit/psiz\"% {{ shot }}); _nz=size(data(_psiz)); public _psir=jet(\"PPF/efit/psir\"% {{ shot }}); _nr=size(data(_psir)); _a=jet(\"PPF/efit/psi\"% {{ shot }}); public _nt=size(dim_of(_a,1)); _bubu=build_signal(jreshape(data(_a),[_nr,_nz,size(data(_a))/_nr/_nz]),*,data(_psir),data(_psiz),dim_of(_a,1)); _sig=_bubu"
         },
         "SCALE": -6.2831853072
     },
-    "time_slice[#]/profiles_2d[0]/grid_type/index": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1
-    },
-    "time_slice[#]/profiles_2d[0]/grid_type/name": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "rectangular"
-    },
+    "time_slice[#]/profiles_2d[0]/grid_type/index": 1,
+    "time_slice[#]/profiles_2d[0]/grid_type/name": "rectangular",
     "time_slice[#]/profiles_2d[0]/grid/dim1": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/PSIR\"% {{ shot }})"
+            "signal": "PPF/EFTP/PSIR"
         }
     },
     "time_slice[#]/profiles_2d[0]/grid/dim2": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "MAP_TYPE": "DATA_SOURCE",
+        "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFTP/PSIZ\"% {{ shot }})"
+            "signal": "PPF/EFTP/PSIZ"
         }
-    },
-
-
+    }
 }
