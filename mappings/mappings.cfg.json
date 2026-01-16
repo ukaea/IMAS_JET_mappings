@@ -1,4 +1,9 @@
 {
-    "3.37": ["summary", "magnetics", "thomson_scattering", "wall"],
-    "3.34": ["pf_active"]
+    "metadata": {
+        "experiment": "jet",
+        "author": "Adam Parker, Gabor Szepesi, Rui Coelho",
+        "version": "0.1.0"
+    },
+    "partitions": [],
+    "groups": ["dataset_description", "tf", "pf_active"]
 }
