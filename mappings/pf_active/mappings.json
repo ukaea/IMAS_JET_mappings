@@ -17,27 +17,11 @@
         "VALUE": "03.07.2025",
         "COMMENT": "Ideally from system date..."
     },
-    "_data1": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/MAGN/ECME\"% {{ shot }}); _sig = value_of(_aux)"
-        },
-        "COMMENT": "This contains the first batch of data for the PF_ACTIVE coils"
-    },
-    "_data2": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
-        },
-        "COMMENT": "This contains the second batch of data for the PF_ACTIVE coils"
-    },
     "time": {
         "MAP_TYPE": "PLUGIN",
         "PLUGIN": "MDSPLUS",
         "ARGS": {
-            "signal": "_aux=jet(\"PPF/MAGN/IPLA\"% {{ shot }}); _sig = dim_of(_aux% 0)"
+            "signal": "_aux=jet(\"PPF/MAGC/IPLA\"% {{ shot }}); _sig = dim_of(_aux% 0)"
         },
         "COMMENT": "Time is supposed to be homogeneous since taken from MAGN/IPLA..."
     },
@@ -55,10 +39,11 @@
     },
     "coil[#]/current/data" : {
         "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
+        "PLUGIN": "CUSTOM_JET",
         "ARGS": {
-            "signal": "{{ PF_COIL_CURRENT }}"
-        }
+            "coil_name": "{{ PF_COIL_NAME }}"
+        },
+		"FUNCTION": "pf_coil_current"
     },
     "coil[#]/function": {
         "MAP_TYPE": "VALUE",
@@ -100,45 +85,21 @@
     "coil[#]/element[#]/geometry/rectangle/height": {
         "MAP_TYPE": "VALUE",
         "VALUE": "{{ at( at(PF_COILS, indices.0).elements, indices.1).height }}"
+    },
+	"_data1": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "_aux=jet(\"PPF/MAGN/ECME\"% {{ shot }}); _sig = value_of(_aux)"
+        },
+        "COMMENT": "This contains the first batch of data for the PF_ACTIVE coils"
+    },
+    "_data2": {
+        "MAP_TYPE": "PLUGIN",
+        "PLUGIN": "MDSPLUS",
+        "ARGS": {
+            "signal": "_aux=jet(\"PPF/MAGN/FCME\"% {{ shot }}); _sig = value_of(_aux)"
+        },
+        "COMMENT": "This contains the second batch of data for the PF_ACTIVE coils"
     }
 }
-
-COMMENTS:
-PPF DDA: MAGC/PFS -> 2D array [time,nPF_circuits]. There are just 10 circuit currents but nPF_circuits = 12 to
-         /PFSY -> string with the actual method (sc or lkat) but it's a comment so not easy to fetch via MDSplus
-		 The 11th column is P4U and 12th column is P4L. Columns 5 and 6 should be ignored (avg and imbalance of P4 pair)
-
-'P1Eu_P1El_P3M':PFS[:,0]
-
-'P1C  ':PFS[:,0]+PFS[:,1]
-
-'P4U      ':PFS[:,10]
-
-'P3SU      ':PFS[:,2]
-
-'P3RU     ':PFS[:,3]
-
-'P2RU     ':PFS[:,3]
-
-'P2SU     ':PFS[:,2]
-
-'P4L      ':PFS[:,11]
-
-'P3SL     ':PFS[:,2]
-
-'P3RL     ':PFS[:,3]
-
-'P2RL     ':PFS[:,3]
-
-'P2SL     ':PFS[:,2]
-
-'D1       ':PFS[:,6]
-
-'D2       ':PFS[:,7]
-
-'D3       ':PFS[:,8]
-
-'D4       ':PFS[:,9]
-
-
-

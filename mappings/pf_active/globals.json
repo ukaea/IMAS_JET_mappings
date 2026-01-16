@@ -1,6 +1,5 @@
 {
     "PF_COIL_NAME": "{{ at(PF_COILS, indices.0).name }}",
-    "PF_COIL_CURRENT": "{{ at(PF_COILS, indices.0).current }}",
     "PF_COILS": [
         {
             "name":"P1Eu_P1El_P3M",
@@ -13,12 +12,6 @@
                 {"turns":2, "r":3.845, "z":-3.107, "width":0.072, "height":0.082}
             ]
         },
-		COMMENT: When looking with Gabor to JET magnetics pages we realised that the PRIMARY circuit
-		actually includes the P3M ones well outside the CS. For some reason (historical) i had then 
-		included as part of the P1C_P3M coil !!! But in reality the Primary circuit current in feeding
-		the 2 up and down P1Eu_P1El + the P1C + P3M. The P1C HOWEVER....appears to ALSO get in addition
-		the PFX circuit current (see EFIT xml GAbor showed me). This HAS to be confirmed by Gabor with Sergei
-		CONSEQUENCE=> Simply swap place for the P3M 2 + 2 turns currently in P1C_P3M to the current P1Eu_P1El
         {
             "name":"P1C",
             "elements":[
