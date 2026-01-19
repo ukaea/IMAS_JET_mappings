@@ -8,7 +8,7 @@
         "DATA_SOURCE": "MDSPLUS",
         "ARGS": {
             "signal": "PPF/EFTP/XIPC",
-			"suffix": "dim_of(_aux, 1)"
+			"suffix": "dim_of(_aux, 0)"
         }
     },
     "vacuum_toroidal_field/r0": 2.96,
