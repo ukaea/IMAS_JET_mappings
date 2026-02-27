@@ -1,63 +1,27 @@
 {
-    "ids_properties/homogeneous_time": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 2
-    },
-    "ids_properties/comment": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "JET data mapped using UDA and JSON Mapping Plugin"
-    },
-    "ids_properties/provider": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "Gabor Szepesi",
-        "COMMENT": "Automatic from PPF metadata"
-    },
-    "ids_properties/creation_date": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "TO BE ADDED",
-        "COMMENT": "Automatic from PPF metadata"
-    },
-    "ids_properties/node": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1,
-        "COMMENT": "Provenance for the whole IDS"
-    },
-    "description_2d": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1
-    },
-    "description_2d[#]/type/name": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "single_unit_vessel"
-    },
-    "description_2d[#]/type/index": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0
-    },
-    "description_2d[#]/type/description": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "Limiter structure is using a single unit, the vessel structure is filled"
-    },
-    "description_2d[#]/limiter/unit": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1
-    },
-    "description_2d[#]/limiter/unit[#]/closed": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1
-    },
+    "ids_properties/homogeneous_time": 2,
+    "ids_properties/comment": "JET data mapped using UDA and JSON Mapping Plugin",
+    "ids_properties/provider": "Gabor Szepesi",
+    "ids_properties/creation_date": "TO BE ADDED",
+    "ids_properties/node": 1,
+    "description_2d": 1,
+    "description_2d[#]/type/name": "single_unit_vessel",
+    "description_2d[#]/type/index": 0,
+    "description_2d[#]/type/description": "Limiter structure is using a single unit, the vessel structure is filled",
+    "description_2d[#]/limiter/unit": 1,
+    "description_2d[#]/limiter/unit[#]/closed": 1,
     "description_2d[#]/limiter/unit[#]/outline/r": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFIT/RLIM\"% {{ shot }})"
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/EFIT/RLIM"
         }
     },
     "description_2d[#]/limiter/unit[#]/outline/z": {
-		"MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_sig=jet(\"PPF/EFIT/ZLIM\"% {{ shot }})"
+		"map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/EFIT/ZLIM"
         }
     }
 }
