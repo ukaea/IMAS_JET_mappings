@@ -2,20 +2,20 @@
     "ids_properties/homogeneous_time": 0,
     "r0": 2.96,
     "b_field_phi_vacuum_r/data": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "MDSPLUS",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
             "signal": "PPF/MAGC/BVAC"
         },
-        "SCALE": "2.96",
-        "COMMENT": "r0 * B0"
+        "scale": "2.96",
+        "comment": "r0 * B0"
     },
     "b_field_phi_vacuum_r/time": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "MDSPLUS",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
             "signal": "PPF/MAGC/BVAC",
-            "suffix": "dim_of(_aux)"
+			"suffix": "dim_of(_aux)"
         }
     }
 }
