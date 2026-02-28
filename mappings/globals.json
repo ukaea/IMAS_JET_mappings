@@ -1,19 +1,27 @@
 {
-    "PLUGIN_CONFIG": {
-        "JET_CPF": {
-            "ARGS": {
-                "pulse": "{{ shot }}"
-            }
-        },
-        "MDSPLUS": {
+    "DEG2RAD": 0.0174532925199,
+    "UNIT_SF": 1000,
+	"DATA_SOURCE_CONFIG": {
+		"JET_CPF": {
+			"ARGS": {
+				"pulse": "{{ shot }}"
+			}
+		},
+		"MDSPLUS": {
+			"ARGS": {
+				"shot": "{{ shot }}",
+				"host": "mdsplus.jetdata.eu",
+				"port": 8000,
+				"template": "_aux=jet(\"{signal}\", {shot}); {suffix}",
+				"suffix": ""
+			}
+		},
+        "CUSTOM_JET": {
             "ARGS": {
                 "shot": "{{ shot }}",
                 "datatype": "{{ datatype }}",
-                "rank": "{{ rank }}",
-                "host": "mdsplus.jetdata.eu",
-                "port": "8000"
-            },
-            "FUNCTION": "read"
-		}
-    }
+                "rank": "{{ rank }}"
+            }
+        }
+	}
 }
