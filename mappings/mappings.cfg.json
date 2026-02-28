@@ -5,5 +5,9 @@
         "version": "0.1.0"
     },
     "partitions": [],
-    "groups": ["equilibrium", "wall", "dataset_description", "tf", "pf_active", "magnetics", "thomson_scattering"]
+    "groups": [
+        "equilibrium", "wall", "dataset_description",
+        "tf", "pf_active", "magnetics", 
+        "thomson_scattering", "iron_core", "interferometer"
+    ]
 }
