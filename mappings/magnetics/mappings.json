@@ -1,169 +1,99 @@
 {
-    "ids_properties/homogeneous_time": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0
-    },
-    "ids_properties/comment": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "JET data mapped using UDA and JSON Mapping Plugin"
-    },
-    "ids_properties/provider": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "Gabor Szepesi",
-        "COMMENT": "Automatic from PPF metadata"
-    },
-    "ids_properties/creation_date": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "TO BE ADDED",
-        "COMMENT": "Automatic from PPF metadata"
-    },
-    "ip": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1
-    },
+    "ids_properties/homogeneous_time": 0,
+    "ids_properties/comment": "JET data mapped using UDA and JSON Mapping Plugin",
+    "ids_properties/provider": "Gabor Szepesi",
+    "ids_properties/creation_date": "TO BE ADDED",
+    "ip": 1,
     "ip[#]/data": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/MAGN/IPLA\"% {{ shot }}); _sig = value_of(_aux)"
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/MAGN/IPLA",
+            "suffix": "value_of(_aux)"
         }
     },
     "ip[#]/time": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/MAGN/IPLA\"% {{ shot }}); _sig = dim_of(_aux% 0)"
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/MAGN/IPLA",
+            "suffix": "dim_of(_aux, 0)"
         }
     },
-    "ip[#]/method_name": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "Line integral of IDCs"
-    },
-    "_b_field_pol_probe": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ length(BPOL_PROBES) }}"
-    },
-    "_b_field_pol_probe[#]/name": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at(BPOL_PROBE, indices.0) }}"
-    },
-    "_b_field_pol_probe[#]/identifier": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "BPOL_PROBE_{{ indices.0 + 1 }}"
-    },
-    "_b_field_pol_probe[#]/type/name": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "mirnov"
-    },
-    "_b_field_pol_probe[#]/type/index": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 2
-    },
-    "_b_field_pol_probe[#]/type/description": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "Mirnov probe"
-    },
-    "_b_field_pol_probe[#]/position/r": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at(BPOL_R, indices.0) }}"
-    },
-    "_b_field_pol_probe[#]/position/z": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at(BPOL_Z, indices.0) }}"
-    },
-    "_b_field_pol_probe[#]/position/phi": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0
-    },
-    "_b_field_pol_probe[#]/position/area": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0.001
-    },
-    "_b_field_pol_probe[#]/position/length": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at(BPOL_LENGTH, indices.0) }}"
-    },
-    "_b_field_pol_probe[#]/turns": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "TO BE MAPPED"
-    },
+    "ip[#]/method_name": "Line integral of IDCs",
+    "_b_field_pol_probe": "{{ length(BPOL_PROBES) }}",
+    "_b_field_pol_probe[#]/name": "{{ at(BPOL_PROBE, indices.0) }}",
+    "_b_field_pol_probe[#]/identifier": "BPOL_PROBE_{{ indices.0 + 1 }}",
+    "_b_field_pol_probe[#]/type/name": "mirnov",
+    "_b_field_pol_probe[#]/type/index": 2,
+    "_b_field_pol_probe[#]/type/description": "Mirnov probe",
+    "_b_field_pol_probe[#]/position/r": "{{ at(BPOL_R, indices.0) }}",
+    "_b_field_pol_probe[#]/position/z": "{{ at(BPOL_Z, indices.0) }}",
+    "_b_field_pol_probe[#]/position/phi": 0,
+    "_b_field_pol_probe[#]/position/area": 0.001,
+    "_b_field_pol_probe[#]/position/length": "{{ at(BPOL_LENGTH, indices.0) }}",
+    "_b_field_pol_probe[#]/turns": "TO BE MAPPED",
     "_b_field_pol_probe[#]/field/data": {
-       "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/MAGN/BPME\"% {{ shot }}); _sig = BUILD_SIGNAL(value_of(_aux)[0:70%*]%*%dim_of(_aux%0)%dim_of(_aux%1))"
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/MAGN/BPME",
+            "suffix": "BUILD_SIGNAL(value_of(_aux)[0:70,*], *, dim_of(_aux, 0), dim_of(_aux, 1))"
         }
     },
     "_b_field_pol_probe[#]/field/time": {
-       "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/MAGN/BPME\"% {{ shot }}); _sig = BUILD_SIGNAL(value_of(_aux)[0:70%*]%*%dim_of(_aux%0)%dim_of(_aux%1)); dim_of(_sig%1)"
+       "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/MAGN/BPME",
+            "suffix": "_sig = BUILD_SIGNAL(value_of(_aux)[0:70,*], *, dim_of(_aux, 0), dim_of(_aux, 1)); dim_of(_sig, 1)"
         }
     },
-    "_b_field_pol_probe[#]/poloidal_angle": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "{{ at(BPOL_POL, indices.0) }}"
-    },
-    "_b_field_pol_probe[#]/toroidal_angle": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 0
-    },
+    "_b_field_pol_probe[#]/poloidal_angle": "{{ at(BPOL_POL, indices.0) }}",
+    "_b_field_pol_probe[#]/toroidal_angle": 0,
     "flux_loop": {
-        "MAP_TYPE": "VALUE",
+        "map_type": "VALUE",
         "VALUE": "{{ length(FLUX_LOOPS) }}"
     },
     "_flux_loop[#]/name": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JET_GEOM",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "JET_GEOM",
+        "args": {
             "json_ptr": "/{{ at(FLUX_LOOPS, indices.0) }}/sensor"
         }
     },
-    "flux_loop[#]/identifier": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "FLUX_LOOP_{{ indices.0 + 1 }}"
-    },
-    "flux_loop[#]/type/name": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "<INSERT>"
-    },
-    "flux_loop[#]/type/index": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "<INSERT>"
-    },
-    "flux_loop[#]/position": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 2
-    },
+    "flux_loop[#]/identifier": "FLUX_LOOP_{{ indices.0 + 1 }}",
+    "flux_loop[#]/type/name": "<INSERT>",
+    "flux_loop[#]/type/index": "<INSERT>",
+    "flux_loop[#]/position": 2,
     "_flux_loop[#]/position[#]/r": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JET_GEOM",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "JET_GEOM",
+        "args": {
             "json_ptr": "/{{ at(FLUX_LOOPS, indices.0) }}/R{{ indices.1 + 1 }}"
         }
     },
     "_flux_loop[#]/position[#]/z": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "JET_GEOM",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "JET_GEOM",
+        "args": {
             "json_ptr": "/{{ at(FLUX_LOOPS, indices.0) }}/Z/{{ indices.1 }}"
         }
     },
     "_flux_loop[#]/flux": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
             "signal": "<INSERT SIGNAL STRING"
         },
-        "COMMENT": "The final syntax of this string may change"
+        "comment": "The final syntax of this string may change"
     },
     "_flux_loop[#]/voltage": {
-       "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
+       "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
             "signal": "<INSERT SIGNAL STRING"
         },
-        "COMMENT": "The final syntax of this string may change"
+        "comment": "The final syntax of this string may change"
     }
 }
