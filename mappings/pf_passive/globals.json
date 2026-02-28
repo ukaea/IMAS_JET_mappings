@@ -1,0 +1,26 @@
+{
+    "PF_LOOP_NAME": "{{ at(PF_LOOPS, indices.0).name }}",
+    "PF_LOOP_ELEMENTS": "{{ at(PF_LOOPS, indices.0).elements }}",
+    "PF_LOOP_ELEMENT_R": "{{ at(at(PF_LOOPS, indices.0).elements, indices.1).r }}",
+    "PF_LOOP_ELEMENT_Z": "{{ at(at(PF_LOOPS, indices.0).elements, indices.1).z }}",
+    "PF_LOOPS": [
+        {
+            "name":"DIV_VERT_HFS",
+            "elements":[
+                {"r":[2.232,2.232,2.302,2.302], "z":[-1.448,-1.658,-1.658,-1.448]}
+            ]
+        },
+        {
+            "name":"DIV_VERT_LFS",
+            "elements":[
+                {"r":[3.0,3.0,3.102,3.102], "z":[-1.453,-1.663,-1.663,-1.453]}
+            ]
+        },
+        {
+            "name":"DIV_HOR",
+            "elements":[
+                {"r":[2.227,3.1,3.1,2.227], "z":[-1.813,-1.813,-1.773,-1.773]}
+            ]
+        }
+    ]
+}
