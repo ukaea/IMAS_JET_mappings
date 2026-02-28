@@ -1,0 +1,33 @@
+{
+    "ids_properties/homogeneous_time": 1,
+    "ids_properties/comment": "JET data mapped using UDA and JSON Mapping Plugin",
+    "ids_properties/provider": "Rui Coelho",
+    "time": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/KG1V/LID3",
+            "suffix": "dim_of(_aux, 0)"
+        }
+    },
+    "channel": 8,
+    "channel[#]/name": "LID{{ #0 + 1 }}",
+    "channel[#]/identifier": "CH{{ #0 + 1 }}",
+    "channel[#]/line_of_sight/first_point/r": "{{ FIRST_R[#0] }}",
+    "channel[#]/line_of_sight/first_point/z": "{{ FIRST_Z[#0] }}",
+    "channel[#]/line_of_sight/first_point/phi": "{{ FIRST_PHI[#0] }}",
+    "channel[#]/line_of_sight/second_point/r": "{{ SECOND_R[#0] }}",
+    "channel[#]/line_of_sight/second_point/z": "{{ SECOND_Z[#0] }}",
+    "channel[#]/line_of_sight/second_point/phi": "{{ SECOND_PHI[#0] }}",
+    "channel[#]/line_of_sight/third_point/r": "{{ THIRD_R[#0] }}",
+    "channel[#]/line_of_sight/third_point/z": "{{ THIRD_Z[#0] }}",
+    "channel[#]/line_of_sight/third_point/phi": "{{ THIRD_PHI[#0] }}",
+    "channel[#]/n_e_line/data": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/KG1V/LID{{ #0 + 1 }}"
+        }
+    },
+    "_channel[#]/n_e_line/data_error_upper": 0.3
+}
