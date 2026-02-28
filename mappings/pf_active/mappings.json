@@ -4,9 +4,9 @@
     "ids_properties/provider": "Rui Coelho, Adam Parker and Gabor Szepesi",
     "ids_properties/creation_date": "03.07.2025",
     "time": {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "MDSPLUS",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
             "signal": "PPF/MAGC/IPLA",
 			"suffix": "dim_of(_aux, 0)"
         }
@@ -15,12 +15,12 @@
     "coil[#]/name": "{{ PF_COIL_NAME }}",
     "coil[#]/identifier" : "PF_COIL_{{ #0 + 1 }}",
     "coil[#]/current/data" : {
-        "MAP_TYPE": "DATA_SOURCE",
-        "DATA_SOURCE": "CUSTOM_JET",
-        "ARGS": {
+        "map_type": "DATA_SOURCE",
+        "data_source": "CUSTOM_JET",
+        "args": {
             "coil_name": "{{ PF_COIL_NAME }}"
         },
-		"FUNCTION": "pf_coil_current"
+		"function": "pf_coil_current"
     },
     "coil[#]/function": 1,
     "coil[#]/function[#]/index": 1,
