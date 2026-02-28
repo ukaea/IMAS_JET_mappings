@@ -1,0 +1,50 @@
+{
+    "ids_properties/homogeneous_time": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 2
+    },
+    "ids_properties/comment": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "JET data mapped using UDA and JSON Mapping Plugin"
+    },
+    "ids_properties/provider": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "Wolfgang Zwingmann, R.Coelho, E. Nardon, F. Maviglia"
+    },
+    "ids_properties/creation_date": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "26/08/25"
+    },
+    "segment": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ length(IRON_CORE_R) }}"
+    },
+    "segment[#]/name": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "SEGMENT_{{ indices.0 + 1 }}"
+    },
+    "segment[#]/identifier": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "SEGMENT_{{ indices.0 + 1 }}"
+    },
+    "segment[#]/b_field": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ PERMA_B }}"
+    },
+    "segment[#]/permeability_relative": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ PERMA_MU }}"
+    },
+    "segment[#]/geometry/geometry_type": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": 1
+    },
+    "segment[#]/geometry/outline/r": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ IRON_CORE_R_I }}"
+    },
+    "segment[#]/geometry/outline/z": {
+        "MAP_TYPE": "VALUE",
+        "VALUE": "{{ IRON_CORE_Z_I }}"
+    }
+}
