@@ -1,109 +1,101 @@
 {
-    "ids_properties/homogeneous_time": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": 1
-    },
-    "ids_properties/comment": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "JET data mapped using UDA and JSON Mapping Plugin"
-    },
-    "ids_properties/provider": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "Rui Coelho",
-        "COMMENT": "Automatic from PPF metadata"
-    },
-    "ids_properties/creation_date": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "11.11.2024",
-        "COMMENT": "Ideally from system date..."
-    },
+    "ids_properties/homogeneous_time": 1,
+    "ids_properties/comment": "JET data mapped using UDA and JSON Mapping Plugin",
+    "ids_properties/provider": "Rui Coelho",
+    "ids_properties/creation_date": "TO BE ADDED",
     "_r": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/HRTS/NE\"% {{ shot }}); _sig = dim_of(_aux% 0)"
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/HRTS/NE",
+            "suffix": "dim_of(_aux, 0)"
         }
     },
     "time": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/HRTS/NE\"% {{ shot }}); _sig = dim_of(_aux% 1)"
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/HRTS/NE",
+            "suffix": "dim_of(_aux, 1)"
         }
     },
     "channel": {
-        "MAP_TYPE": "DIMENSION",
-        "DIM_PROBE": "_r"
+        "map_type": "DIMENSION",
+        "dim_probe": "_r"
     },
-    "channel[#]/name": {
-        "MAP_TYPE": "VALUE",
-        "VALUE": "CH{{ indices.0 +1 }}",
-        "COMMENT": "Just name the channels CH1,2,3...on the fly"
-    },
+    "channel[#]/name": "CH{{ indices.0 +1 }}",
     "channel[#]/position/r": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/HRTS/NE\"% {{ shot }}); _sig = dim_of(_aux% 0)"
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/HRTS/NE",
+            "suffix": "dim_of(_aux, 0)"
         },
-        "SLICE": "[{{ indices.0 }}]"
+        "slice": "[{{ #0 }}]"
     },
     "channel[#]/position/z": {
-       "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/HRTS/Z\"% {{ shot }}); _sig = value_of(_aux)"
+       "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/HRTS/Z",
+            "suffix": "value_of(_aux)"
         },
-        "SLICE": "[{{ indices.0 }},:]"
+        "slice": "[{{ indices.0 }}][:]"
     },
     "channel[#]/position/phi": {
-        "MAP_TYPE": "VALUE",
+        "map_type": "VALUE",
         "VALUE": 0
     },
      "channel[#]/t_e/data": {
-       "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/HRTS/TE\"% {{ shot }}); _sig = value_of(_aux)"
+       "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/HRTS/TE",
+            "suffix": "value_of(_aux)"
         },
-        "SLICE": "[{{ indices.0 }},:]"
+        "slice": "[{{ indices.0 }}][:]"
     },
      "channel[#]/t_e/data_error_upper": {
-       "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/HRTS/DTE\"% {{ shot }}); _sig = value_of(_aux)"
+       "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/HRTS/DTE",
+            "suffix": "value_of(_aux)"
         },
-        "SLICE": "[{{ indices.0 }},:]"
+        "slice": "[{{ indices.0 }}][:]"
     },
     "channel[#]/t_e/time": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/HRTS/NE\"% {{ shot }}); _sig = dim_of(_aux% 1)"
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/HRTS/NE",
+            "suffix": "dim_of(_aux, 1)"
         }
     },
      "channel[#]/n_e/data": {
-       "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/HRTS/NE\"% {{ shot }}); _sig = value_of(_aux)"
+       "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/HRTS/NE",
+            "suffix": "value_of(_aux)"
         },
-        "SLICE": "[{{ indices.0 }},:]"
+        "slice": "[{{ indices.0 }}][:]"
     },
      "channel[#]/n_e/data_error_upper": {
-       "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/HRTS/DNE\"% {{ shot }}); _sig = value_of(_aux)"
+       "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/HRTS/DNE",
+            "suffix": "value_of(_aux)"
         },
-        "SLICE": "[{{ indices.0 }},:]"
+        "slice": "[{{ indices.0 }}][:]"
     },
     "channel[#]/n_e/time": {
-        "MAP_TYPE": "PLUGIN",
-        "PLUGIN": "MDSPLUS",
-        "ARGS": {
-            "signal": "_aux=jet(\"PPF/HRTS/NE\"% {{ shot }}); _sig = dim_of(_aux% 1)"
+        "map_type": "DATA_SOURCE",
+        "data_source": "MDSPLUS",
+        "args": {
+            "signal": "PPF/HRTS/NE",
+            "suffix": "dim_of(_aux, 1)"
         }
     }
 }
