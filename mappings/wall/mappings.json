@@ -25,10 +25,10 @@
         }
     },
     "description_2d[#]/vessel/unit": 1,
-    "description_2d[#]/vessel/unit[#]/annular/outline_inner/r": "{{ OUTLINE_INNER_R }}",
-    "description_2d[#]/vessel/unit[#]/annular/outline_inner/z": "{{ OUTLINE_INNER_Z }}",
-    "description_2d[#]/vessel/unit[#]/annular/outline_inner/closed": "{{ OUTLINE_INNER_CLOSED }}",
-    "description_2d[#]/vessel/unit[#]/annular/outline_outer/r": "{{ OUTLINE_OUTER_R }}",
-    "description_2d[#]/vessel/unit[#]/annular/outline_outer/z": "{{ OUTLINE_OUTER_Z }}",
-    "description_2d[#]/vessel/unit[#]/annular/outline_outer/closed": "{{ OUTLINE_OUTER_CLOSED }}"
+    "description_2d[#]/vessel/unit[#]/annular/outline_inner/r": "{{ OUTLINE_INNER.r }}",
+    "description_2d[#]/vessel/unit[#]/annular/outline_inner/z": "{{ OUTLINE_INNER.z }}",
+    "description_2d[#]/vessel/unit[#]/annular/outline_inner/closed": "{{ OUTLINE_INNER.closed }}",
+    "description_2d[#]/vessel/unit[#]/annular/outline_outer/r": "{{ OUTLINE_OUTER.r }}",
+    "description_2d[#]/vessel/unit[#]/annular/outline_outer/z": "{{ OUTLINE_OUTER.z }}",
+    "description_2d[#]/vessel/unit[#]/annular/outline_outer/closed": "{{ OUTLINE_OUTER.closed }}"
 }
