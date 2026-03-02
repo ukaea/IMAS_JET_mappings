@@ -1,7 +1,7 @@
 {
     "ids_properties/homogeneous_time": 2,
-    "ids_properties/comment": "JET data mapped using UDA and JSON Mapping Plugin",
-    "ids_properties/provider": "Gabor Szepesi",
+    "ids_properties/comment": "JET data mapped using UDA and JSON Mapping Plugin. The limiter comes from EFIT directly while the vessel is a derivative from S.Gerasimov data (http://users.jet.efda.org/pages/mags/jet-model/model3d-index.html)",
+    "ids_properties/provider": "Gabor Szepesi and Rui Coelho",
     "ids_properties/creation_date": "TO BE ADDED",
     "ids_properties/node": 1,
     "description_2d": 1,
@@ -23,5 +23,12 @@
         "args": {
             "signal": "PPF/EFIT/ZLIM"
         }
-    }
+    },
+    "description_2d[#]/vessel/unit": 1,
+    "description_2d[#]/vessel/unit[#]/annular/outline_inner/r": "{{ OUTLINE_INNER_R }}",
+    "description_2d[#]/vessel/unit[#]/annular/outline_inner/z": "{{ OUTLINE_INNER_Z }}",
+    "description_2d[#]/vessel/unit[#]/annular/outline_inner/closed": "{{ OUTLINE_INNER_CLOSED }}",
+    "description_2d[#]/vessel/unit[#]/annular/outline_outer/r": "{{ OUTLINE_OUTER_R }}",
+    "description_2d[#]/vessel/unit[#]/annular/outline_outer/z": "{{ OUTLINE_OUTER_Z }}",
+    "description_2d[#]/vessel/unit[#]/annular/outline_outer/closed": "{{ OUTLINE_OUTER_CLOSED }}"
 }
