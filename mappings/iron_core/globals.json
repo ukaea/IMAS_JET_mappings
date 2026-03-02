@@ -1,6 +1,8 @@
 {
-    "IRON_CORE_R_I": "{{ at(IRON_CORE_R, indices.0 }}",
-    "IRON_CORE_Z_I": "{{ at(IRON_CORE_Z, indices.0 }}",
+    "IRON_CORE_R_I": "{{ at(IRON_CORE_R, indices.0) }}",
+    "IRON_CORE_Z_I": "{{ at(IRON_CORE_Z, indices.0) }}",
+    "PERMA_B_I": "{{ at(PERMA_B, indices.0) }}",
+    "PERMA_MU_I": "{{ at(PERMA_B, indices.0) }}",
     "IRON_CORE_R": [
         [0.5220, 0.8000, 0.8000, 0.5220],
         [0.8000, 1.0850, 1.0850, 0.8000],
