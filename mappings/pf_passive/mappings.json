@@ -2,14 +2,14 @@
     "ids_properties/homogeneous_time": 2,
     "ids_properties/comment": "JET data mapped using UDA and JSON Mapping Plugin. Origin data chiefly from Sergei Gerasimov memorandum JET_PassiveSimpleModel.pdf",
     "ids_properties/provider": "Rui Coelho, Adam Parker and Gabor Szepesi",
-    "ids_properties/creation_date": "28.02.2026	",
+    "ids_properties/creation_date": "28.02.2026",
     "loop": "{{ length(PF_LOOPS) }}",
     "loop[#]/name": "{{ PF_LOOP_NAME }}",
     "loop[#]/identifier" : "PF_LOOP_{{ #0 + 1 }}",
-    "loop[#]/resistivity": 3.21e-6,
+    "loop[#]/resistivity": 3.21E-6,
     "loop[#]/element" : "{{ length(at(PF_LOOPS, indices.0).elements) }}",
     "loop[#]/element[#]/identifier" : "PF_LOOP_{{ #0 + 1 }}_E{{ #1 + 1 }}",
     "loop[#]/element[#]/geometry/geometry_type": 1,
     "loop[#]/element[#]/geometry/outline/r": "{{ PF_LOOP_ELEMENT_R }}",
-    "loop[#]/element[#]/geometry/outline/z": "{{ PF_LOOP_ELEMENT_Z }}",
+    "loop[#]/element[#]/geometry/outline/z": "{{ PF_LOOP_ELEMENT_Z }}"
 }

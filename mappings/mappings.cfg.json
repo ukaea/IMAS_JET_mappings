@@ -2,12 +2,12 @@
     "metadata": {
         "experiment": "jet",
         "author": "Adam Parker, Gabor Szepesi, Rui Coelho",
-        "version": "0.1.0"
+        "version": "0.2.0"
     },
     "partitions": [],
     "groups": [
-        "equilibrium", "wall", "dataset_description",
-        "tf", "pf_active", "magnetics", 
-        "thomson_scattering", "iron_core", "interferometer"
+        "equilibrium", "wall", "dataset_description", "tf",
+        "pf_active", "magnetics", "pf_passive", "thomson_scattering",
+        "iron_core", "interferometer"
     ]
 }
